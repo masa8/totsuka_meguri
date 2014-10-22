@@ -11,8 +11,8 @@ Snapshot
 ![](snapshots.png?raw=true)
 Support OS
 ==========
- iOS/iPhone
- Android
+ +iOS/iPhone
+ +Android
 
 License 
 ==================================
