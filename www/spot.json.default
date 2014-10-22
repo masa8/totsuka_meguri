@@ -1,0 +1,12 @@
+{ "map":{ "center":{ "lat":35.400673, "lng":139.533848 }, "zoomlevel":16 },
+  "lists":[
+          { "title":"",
+            "name":"",
+           "position":{ "lat":35.430443, "lng":139.556750},
+            "status":"unchecked",
+            "image":"res/higashitotsuka.jpg",
+            "description":"",
+            "howtogetthere":""
+          }
+]
+}
