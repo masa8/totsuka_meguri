@@ -28,10 +28,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 Notice
-============
+======
 アプリ内の説明文は戸塚見知楽会の著作物が含まれており非公開です。
 
-
+HowToBuild
+==========
+ 
+ Step1: Install cordova
+ Step2: Create your app
+  * cordova create your app
+ Step2: Install platforms of cordova
+  * cordova platform add ios
+  * cordova platform add android
+ Step3: Install plugins of cordova 
+  * org.apache.cordova.console 0.2.11 "Console"
+  * org.apache.cordova.device 0.2.12 "Device"
+  * org.apache.cordova.dialogs 0.2.10 "Notification"
+  * org.apache.cordova.file 1.3.1 "File"
+  * org.apache.cordova.file-transfer 0.4.6 "File Transfer"
+  * org.apache.cordova.splashscreen 0.3.3 "Splashscreen"
+  * org.apache.cordova.statusbar 0.1.8 "StatusBar"
+  * plugin.google.maps 1.2.2 "phonegap-googlemaps-plugin"
+ 
 
 
 
