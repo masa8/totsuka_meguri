@@ -51,6 +51,16 @@ Step3: Install following plugins to cordova
  
 Step4: Put all the files in this repository into your app directory  
 Step5: Rename spot.json.default to spot.json  
-Step6: Edit spot.json (pls, use spot.json.default as reference )  
+Step6: Edit spot.json   
+  * map center position latlng 
+  * map zoomlevel
+  * spot title
+  * spot name
+  * spot position 
+  * spot status { checked or unchecked }
+  * spot image
+  * spot description 
+  * hot to get the spot    
+
 Step7: Edit config.xml ( please use config.xml.default as reference )  
 
