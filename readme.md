@@ -9,8 +9,8 @@
 Snapshot
 ========
 ![](snapshots.png?raw=true)
-Support OS
-==========
+Support Platform
+================
  * iOS/iPhone
  * Android
 
@@ -34,9 +34,9 @@ Notice
 HowToBuild
 ==========
  
- Step1: Install cordova  
+ Step1: Install [cordova](http://cordova.apache.org) 
  Step2: Create your app  
-> $cordova create "directory name" "reverse domain-style identifier" "app title" 
+> $ cordova create "directory name" "reverse domain-style identifier" "app title" 
 
 Step2: Install following platforms to cordova  
 > $ cordova platform add ios  
