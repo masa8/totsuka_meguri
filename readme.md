@@ -37,10 +37,12 @@ HowToBuild
  Step1: Install cordova  
  Step2: Create your app  
   * cordova create your app  
- Step2: Install platforms of cordova  
+
+Step2: Install platforms of cordova  
   * cordova platform add ios
   * cordova platform add android  
- Step3: Install plugins of cordova   
+
+Step3: Install plugins of cordova   
   * org.apache.cordova.console 0.2.11 "Console"
   * org.apache.cordova.device 0.2.12 "Device"
   * org.apache.cordova.dialogs 0.2.10 "Notification"
