@@ -34,7 +34,7 @@ Notice
 HowToBuild
 ==========
  
- Step1: Install [cordova](http://cordova.apache.org) 
+ Step1: Install [cordova](http://cordova.apache.org)  
  Step2: Create your app  
 > $ cordova create "directory name" "reverse domain-style identifier" "app title" 
 
