@@ -6,6 +6,9 @@
 日本昔話的伝説の残る「まさかりが淵」など
 戸塚宿と旧東海道周辺の史跡の場所が分かるアプリです。
 
+Snapshot
+========
+![](snapshots.png?raw=true)
 Support OS
 ==========
  iOS/iPhone
