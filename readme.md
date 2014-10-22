@@ -52,6 +52,8 @@ Step3: Install following plugins to cordova
   * org.apache.cordova.statusbar 0.1.8 "StatusBar"
   * plugin.google.maps 1.2.2 "phonegap-googlemaps-plugin"
  
-
-
+Step4: Put all the files into your app directory  
+Step5: Rename spot.json.default to spot.json  
+Step6: Edit spot.json (pls, use spot.json.default as reference )  
+Step7: Edit config.xml ( please use config.xml.default as reference )  
 
