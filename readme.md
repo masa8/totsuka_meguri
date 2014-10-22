@@ -36,7 +36,7 @@ HowToBuild
  
  Step1: Install cordova  
  Step2: Create your app  
-> $cordova create your app  
+> $cordova create "directory name" "reverse domain-style identifier" "app title" 
 
 Step2: Install platforms of cordova  
 > $cordova platform add ios
