@@ -38,11 +38,11 @@ HowToBuild
  Step2: Create your app  
 > $cordova create "directory name" "reverse domain-style identifier" "app title" 
 
-Step2: Install platforms of cordova  
+Step2: Install following platforms to cordova  
 > $ cordova platform add ios  
 > $ cordova platform add android  
 
-Step3: Install following plugins into cordova   
+Step3: Install following plugins to cordova   
   * org.apache.cordova.console 0.2.11 "Console"
   * org.apache.cordova.device 0.2.12 "Device"
   * org.apache.cordova.dialogs 0.2.10 "Notification"
