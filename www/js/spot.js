@@ -202,25 +202,25 @@ var nskana = (function() {
      
         //var divmap = document.getElementById('map_canvas');
         //divmap.style.backgroundColor = 'lightgray';
-        var bounds = [
-          new plugin.google.maps.LatLng(
-              35.400187, 139.531897
-              ),
-          new plugin.google.maps.LatLng(
-         
-              35.398696, 139.530513
-
-              )
-          ];
-        map.addGroundOverlay({ 
-          'url':"www/res/totsuka_map.jpg",
-          'bounds':bounds,
-          'anchor':[0,0],
-          'opacity':0.5,
-          'bearing':0
-        },function(groundOverlay){
-        
-        });
+        //var bounds = [
+        //  new plugin.google.maps.LatLng(
+        //      35.400187, 139.531897
+        //      ),
+        //  new plugin.google.maps.LatLng(
+        // 
+        //     35.398696, 139.530513
+        //
+        //      )
+        //  ];
+        //map.addGroundOverlay({ 
+        //  'url':"www/res/totsuka_map.jpg",
+        //  'bounds':bounds,
+        //  'anchor':[0,0],
+        //  'opacity':0.5,
+        //  'bearing':0
+        //},function(groundOverlay){
+       // 
+       // });
 
 
         map.setVisible(true); 
