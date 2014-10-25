@@ -13,7 +13,7 @@ Support Platform
 
 License 
 ==================================
-ソースコードと画像はMIT Licenseです。
+アプリのソースコードと画像のライセンスはMIT Licenseです。
 
 Copyright (c) 2014 Masaya Shimomatsu
 
