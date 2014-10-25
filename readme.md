@@ -26,7 +26,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Notice
 ======
-アプリ内の説明文は戸塚見知楽会の著作物です。
+アプリ内の説明文は戸塚見知楽会の著作物です。本リポジトリには含まれません。
 
 HowToBuild
 ==========
