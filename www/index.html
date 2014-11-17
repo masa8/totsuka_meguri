@@ -12,9 +12,9 @@
     	<script type="text/javascript" charset="utf-8" src="js/index.js"></script>
         <script type="text/javascript" charset="utf-8" src="js/spot.js"></script>
         <script type="text/javascript">
-          document.addEventListener('deviceready', function() {
-              nskana.create().go();
-            },false );
+         document.addEventListener('deviceready', function() {
+             nskana.create().go();
+             },false );
 
     </script>
     </head>
@@ -34,16 +34,20 @@
           <div data-role="content" id="content" style="position: relative; padding:0; margin-top:10px; margin-left:30px; margin-right:30px;" >		
               <div id="map_canvas" style="width: 100%; height: 300px" ></div>
                 <h1 id="spot-name"></h1>
-		  <p id="spot-description"></p>
-		  <h4 id="spot-howtogetthere"></h4>
-		  <img id="spot-image" style="width: 100%; margin: 0 auto" src="res/default.png" />
+		  <p id="spot-description" style="font-size:1.2em;"></p>
+		  <p id="spot-howtogetthere"></p>
+                  <div class="spot-image-list" >
+                    <img class="spot-image" style="width: 100%; margin: 0 auto" src="./res/default.png" >
+                </div>
               </div>
           <div data-role="footer" id="map-footer"  data-position="fixed" >
             <input type="checkbox"  name="check" id="spot-check" class="custom"  />
             <label for="spot-check">行った!</label>
             <h1></h1>
           </div>
-      </div>
+        </div>
+    </script>
+ 
 </body>
 </html>
 
