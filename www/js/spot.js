@@ -8,15 +8,32 @@ var nskana = (function() {
   var largemap = true;
 
   function buildSpotList() {
-        for ( i in spot.lists ){
-          $("#spot_list").append('<li><a href="index.html">' + spot.lists[i].title + '</a></li>');
+      
+    for ( category in spot.categories ){
+              
+        // Create Category
+        $("#spot_categories").append(
+            $('<li data-role="collapsible" data-inset="false" data-iconpos="right">').append(
+                $('<h3>').text(spot.categories[category].name),
+                $('<ul  data-role="listview" id="'+ spot.categories[category].id +'">')
+                    
+                    .listview().listview('refresh')
+            ).collapsible().collapsible('refresh')
+        ).listview().listview('refresh');
         }
-        $("#spot_list").listview().listview('refresh');
-          $(document).on("click", "#spot_list li", function(event) {
-           selected = $(this).text();
-           $("#spotpanel").panel("close");
-           window.scrollTo(0,0);
-        });
+              
+        // Create MIDOKORO in Category
+        for ( i in spot.lists ){
+            $("#"+spot.lists[i].category).append('<li><a href="index.html">' + spot.lists[i].title + '</a></li>');
+            $("#"+spot.lists[i].category).listview().listview('refresh');
+            $(document).on("click", "#"+ spot.lists[i].category+" li", function(event) {
+                             selected = $(this).text();
+                             $("#spotpanel").panel("close");
+                             window.scrollTo(0,0);
+                             });
+        }
+              
+            
   }
   function getSpotDefaultData() {
       $.ajax({
