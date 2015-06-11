@@ -226,7 +226,7 @@ window.scrollTo(0,0);
                            var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
                            $('#images').append(image_tag);
                          
-                           var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                           var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br class=\"image_captions\"  />";
                            $('#images').append(caption_tag);
                          
                          }
@@ -296,7 +296,7 @@ window.scrollTo(0,0);
                                 var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
                                 $('#images').append(image_tag);
                                 
-                                var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br class=\"image_captions\" />";
                                 $('#images').append(caption_tag);
                                 
                                 }
@@ -329,7 +329,7 @@ window.scrollTo(0,0);
                                 var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
                                 $('#images').append(image_tag);
                                 
-                                var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br class=\"image_captions\" />";
                                 $('#images').append(caption_tag);
                                 
                                 }
@@ -429,7 +429,7 @@ window.scrollTo(0,0);
                                         var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
                                         $('#images').append(image_tag);
                                         
-                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br class=\"image_captions\" />";
                                         $('#images').append(caption_tag);
                                         
                                         }
@@ -469,7 +469,7 @@ window.scrollTo(0,0);
                                         var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
                                         $('#images').append(image_tag);
                                         
-                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br class=\"image_captions\" />";
                                         $('#images').append(caption_tag);
                                         
                                         }
@@ -534,7 +534,7 @@ window.scrollTo(0,0);
                                         var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
                                         $('#images').append(image_tag);
                                         
-                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br class=\"image_captions\" />";
                                         $('#images').append(caption_tag);
                                         
                                         }
