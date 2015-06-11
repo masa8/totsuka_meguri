@@ -6,36 +6,12 @@ var nskana = (function() {
   var map = null;
   var selected = "";
   var largemap = true;
+  
 
-  function buildSpotList() {
-      
-    for ( category in spot.categories ){
               
-        // Create Category
-        $("#spot_categories").append(
-            $('<li data-role="collapsible" data-inset="false" data-iconpos="right">').append(
-                $('<h3>').text(spot.categories[category].name),
-                $('<ul  data-role="listview" id="'+ spot.categories[category].id +'">')
-                    
-                    .listview().listview('refresh')
-            ).collapsible().collapsible('refresh')
-        ).listview().listview('refresh');
-        }
-              
-        // Create MIDOKORO in Category
-        for ( i in spot.lists ){
-            $("#"+spot.lists[i].category).append('<li><a href="index.html">' + spot.lists[i].title + '</a></li>');
-            $("#"+spot.lists[i].category).listview().listview('refresh');
-            $(document).on("click", "#"+ spot.lists[i].category+" li", function(event) {
-                             selected = $(this).text();
-                             $("#spotpanel").panel("close");
-                             window.scrollTo(0,0);
-                             });
-        }
-              
-            
-  }
-  function getSpotDefaultData() {
+   /*-----------------------------------------*/
+    // Load spot.json
+    function getSpotDefaultData() {
       $.ajax({
        url: 'spot.json',
        async: false,
@@ -47,6 +23,8 @@ var nskana = (function() {
        console.log('spot.json read error!: ' + text);
       });
   }
+
+ // Create my_spot.json
  var w = new $.Deferred;
   function setSpotData() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT,
@@ -96,6 +74,8 @@ var nskana = (function() {
     writer.truncate(0);
     console.log('my_spot.json was written!!');
   }
+              
+  // Checking if my_spot.json exists.
  var d = new $.Deferred;
   function getSpotData() {
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
@@ -113,7 +93,6 @@ var nskana = (function() {
     reader.readEntries(function(entries){
       var i;
       for ( i = 0; i< entries.length; i++){
-      //  alert(entries[i].toURL());
       }
     },function(){ });
     fileSystem.root.getFile('my_spot.json',
@@ -137,8 +116,6 @@ var nskana = (function() {
 
   function checkFile(file) {
     console.log('checkFile!');
-    //if (file.Type ) {
-      //alert(file.Type);
       var checker = new FileReader();
       checker.onerror = function(evt) {
         console.log('onError!');
@@ -161,11 +138,44 @@ var nskana = (function() {
       };
       checker.readAsText(file);
       console.log('my_spot file was read as Text!!');
-    //}else {
-      //console.log('my_spot file is not file!');
-      //d.reject('E');
-    //}
   }
+/*-----------------------------------------*/
+// Side Bar Provider.
+function buildSpotList() {
+
+for ( category in spot.categories ){
+// Create Category
+$("#spot_categories").append(
+$('<li data-role="collapsible" data-inset="false" data-iconpos="right">').append(
+    $('<h3>').text(spot.categories[category].name),
+    $('<ul  data-role="listview" id="'+ spot.categories[category].id +'">')
+    
+    .listview().listview('refresh')
+    ).collapsible().collapsible('refresh')
+).listview().listview('refresh');
+}
+
+// Create MIDOKORO in Category
+for ( i in spot.lists ){
+var categoryset = spot.lists[i].category.split(',');
+for ( j in categoryset ){
+
+$("#"+categoryset[j]).append('<li><a href="index.html">' + spot.lists[i].title + '</a></li>');
+$("#"+categoryset[j]).listview().listview('refresh');
+$(document).on("click", "#"+ categoryset[j]+" li", function(event) {
+selected = $(this).text();
+$("#spotpanel").panel("close");
+window.scrollTo(0,0);
+});
+
+}
+}
+
+
+}
+              
+   /*--------------------------------------------*/
+   // Map Provider
   function createMap() {
     
 
@@ -176,18 +186,14 @@ var nskana = (function() {
     var map_button = document.getElementById('map-button');
     map_button.addEventListener('click', onMapBtnClicked, false);
     
-    //var large_map_button = document.getElementById('large-map-button');
-    //large_map_button.addEventListener('click', onLargeMapBtnClicked, false);
-
     var div = document.getElementById('map_canvas');
     map = plugin.google.maps.Map.getMap(div,
         {'controls': { 'myLocationButton': true },
       'camera': {'latLng': KANAGAWA, 'zoom': spot.map.zoomlevel }});
       map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
       
-      $("#spotpanel").on('panelbeforeopen',function(){ 
-        //map.setVisible(false);
-
+      $("#spotpanel").on('panelbeforeopen',function(){
+                         
       });
       $("#spotpanel").on('panelclose',function(){ 
       
@@ -210,37 +216,30 @@ var nskana = (function() {
               }else {
                 $('#spot-check').prop("checked",false).checkboxradio("refresh");
               }
-              $('#spot-image').attr("src", spot.lists[k].image);
+                         // Set Images and Captions
+                         var imageset = spot.lists[k].image.split(',');
+                         var captionset = spot.lists[k].caption.split(',');
+                         $('.image_contents').remove();
+                         $('.image_captions').remove();
+                         
+                         for ( var img_index in imageset ){
+                           var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
+                           $('#images').append(image_tag);
+                         
+                           var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                           $('#images').append(caption_tag);
+                         
+                         }
+
+                         
+                         
             }
           }
       
       });
-      
-     
-        //var divmap = document.getElementById('map_canvas');
-        //divmap.style.backgroundColor = 'lightgray';
-        //var bounds = [
-        //  new plugin.google.maps.LatLng(
-        //      35.400187, 139.531897
-        //      ),
-        //  new plugin.google.maps.LatLng(
-        // 
-        //     35.398696, 139.530513
-        //
-        //      )
-        //  ];
-        //map.addGroundOverlay({ 
-        //  'url':"www/res/totsuka_map.jpg",
-        //  'bounds':bounds,
-        //  'anchor':[0,0],
-        //  'opacity':0.5,
-        //  'bearing':0
-        //},function(groundOverlay){
-       // 
-       // });
 
 
-        map.setVisible(true); 
+        map.setVisible(true);
         
         buildSpotList();
 
@@ -249,13 +248,6 @@ var nskana = (function() {
   } 
   
   
-  
-  var n = new $.Deferred;
-  function doNothing() {
-    console.log('doNothing');
-    n.resolve();
-    return n.promise();
-  }
   function onMapReady(map) {
     for (i in spot.lists) {
       var motto_manabitai_basyo = new plugin.google.maps.LatLng(
@@ -278,8 +270,9 @@ var nskana = (function() {
           $('#spot-howtogetthere').text("");
           $('#spot-check').checkboxradio('disable');
           $('#spot-check').checkboxradio('refresh');
-          $('#spot-image').attr("src","res/default.png");
-          marker.showInfoWindow();
+
+                                
+        marker.showInfoWindow();
            for (k in spot.lists) {
             if (marker.getTitle() == spot.lists[k].title) {
               $('#spot-name').text(spot.lists[k].name);
@@ -292,7 +285,22 @@ var nskana = (function() {
               }else{
                 $('#spot-check').prop("checked",false).checkboxradio('refresh');
               }
-                $('#spot-image').attr("src",spot.lists[k].image);
+                                
+                                // Set Images and Captions
+                                var imageset = spot.lists[k].image.split(',');
+                                var captionset = spot.lists[k].caption.split(',');
+                                $('.image_contents').remove();
+                                $('.image_captions').remove();
+                                
+                                for ( var img_index in imageset ){
+                                var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
+                                $('#images').append(image_tag);
+                                
+                                var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                $('#images').append(caption_tag);
+                                
+                                }
+                                
             }
           }
                 
@@ -311,7 +319,21 @@ var nskana = (function() {
               }else{
                 $('#spot-check').prop("checked",false).checkboxradio('refresh');
               }
-                $('#spot-image').attr("src",spot.lists[k].image);
+                                // Set Images and Captions
+                                var imageset = spot.lists[k].image.split(',');
+                                var captionset = spot.lists[k].caption.split(',');
+                                $('.image_contents').remove();
+                                $('.image_captions').remove();
+                                
+                                for ( var img_index in imageset ){
+                                var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
+                                $('#images').append(image_tag);
+                                
+                                var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                $('#images').append(caption_tag);
+                                
+                                }
+                                
             }
           }
         });
@@ -322,6 +344,8 @@ var nskana = (function() {
    map.refreshLayout();
    
   }
+              
+   // Register Event Listener (Right Button on Header)
    function onMapBtnClicked() {
     
     if ( largemap ) {
@@ -340,9 +364,11 @@ var nskana = (function() {
         $("#map-button").text("大きな地図").button('refresh');
     }
   }
+  // Register Event Listener ( ITTA CheckBox )
   function onFlipDisabled() {
     $('#spot-check').checkboxradio('disable');
   }
+              
   function onFlipChanged() {
     $('#spot-check').on('change', function(evt) {
       var val = $('#spot-check').prop("checked");
@@ -378,8 +404,8 @@ var nskana = (function() {
                   $('#spot-howtogetthere').text("");
                   $('#spot-check').checkboxradio('disable');
                   $('#spot-check').checkboxradio('refresh');
-                  $('#spot-image').attr("src","res/default.png");
-                  marker.showInfoWindow();
+                 
+                marker.showInfoWindow();
                   for (k in spot.lists) {
                     if (marker.getTitle() == spot.lists[k].title) {
                       $('#spot-name').text(spot.lists[k].name);
@@ -393,7 +419,21 @@ var nskana = (function() {
                       }else{
                         $('#spot-check').prop("checked",false).checkboxradio('refresh');
                       }
-                      $('#spot-image').attr("src", spot.lists[k].image);
+                                        // Set Images and Captions
+                                        var imageset = spot.lists[k].image.split(',');
+                                        var captionset = spot.lists[k].caption.split(',');
+                                        $('.image_contents').remove();
+                                        $('.image_captions').remove();
+                                        
+                                        for ( var img_index in imageset ){
+                                        var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
+                                        $('#images').append(image_tag);
+                                        
+                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                        $('#images').append(caption_tag);
+                                        
+                                        }
+                                        
                     }
                   }
   
@@ -413,7 +453,26 @@ var nskana = (function() {
                       }else{
                         $('#spot-check').prop("checked",false).checkboxradio('refresh');
                       }
-                      $('#spot-image').attr("src",spot.lists[k].image);
+                                        
+                       var imageset = spot.lists[k].image.split(',');
+                        for ( var img_index in imageset ){
+                            var image_tag = "<img src=\"" + imageset[img_index] + "\" />";
+                            $('#images').append(image_tag);
+                        }
+                                        // Set Images and Captions
+                                        var imageset = spot.lists[k].image.split(',');
+                                        var captionset = spot.lists[k].caption.split(',');
+                                        $('.image_contents').remove();
+                                        $('.image_captions').remove();
+                                        
+                                        for ( var img_index in imageset ){
+                                        var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
+                                        $('#images').append(image_tag);
+                                        
+                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                        $('#images').append(caption_tag);
+                                        
+                                        }
                     }
                   }
                 });
@@ -465,7 +524,21 @@ var nskana = (function() {
                       }else{
                         $('#spot-check').prop("checked",false).checkboxradio('refresh');
                       }
-                      $('#spot-image').attr("src",spot.lists[k].image);
+                                        // Set Images and Captions
+                                        var imageset = spot.lists[k].image.split(',');
+                                        var captionset = spot.lists[k].caption.split(',');
+                                        $('.image_contents').remove();
+                                        $('.image_captions').remove();
+                                        
+                                        for ( var img_index in imageset ){
+                                        var image_tag = "<img class=\"image_contents\" src=\"" + imageset[img_index] + "\" />";
+                                        $('#images').append(image_tag);
+                                        
+                                        var caption_tag = "<p class=\"image_captions\" >" + captionset[img_index] + "</p><br/>";
+                                        $('#images').append(caption_tag);
+                                        
+                                        }
+                                        
                     }
                   }
                 });
@@ -491,7 +564,6 @@ Api.prototype.go = function() {
  .then(onFlipChanged());
 };
 var kana = {
-  test: 'test!!!',
     create: function() {
           return new Api();
         }
