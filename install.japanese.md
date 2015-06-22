@@ -67,90 +67,90 @@ Extra以下の下記をインストール
   
 ### 1.4 git/gitBASHをインストールする
 https://msysgit.github.io  
-　Welcomeページでネクストボタンをクリック  
-　ライセンスを確認しネクストボタンをクリック  
-　インストールフォルダを確認しネクストボタンをクリック  
-　Gitbash Here を選択しネクストボタンをクリック  
-　後は全てネクストボタンをクリックしインストールする  
+Welcomeページでネクストボタンをクリック  
+ライセンスを確認しネクストボタンをクリック  
+インストールフォルダを確認しネクストボタンをクリック  
+Gitbash Here を選択しネクストボタンをクリック  
+後は全てネクストボタンをクリックしインストールする  
 
 ### 1.4: Node.jsをインストールする
- https://nodejs.org/download/  
- Windows installerをクリックし手順に従ってインストール  
+https://nodejs.org/download/  
+Windows installerをクリックし手順に従ってインストール  
 
 ### 1.5: Cordovaをインストールする  
- コマンドプロンプトを開く  
-　次のコマンドを実行  
-　C:\>npm install -g cordova  
+コマンドプロンプトを開く  
+次のコマンドを実行  
+C:\>npm install -g cordova  
 
 ### 1.6: サンプルアプリで確認する  
- $ cordova create hello com.example.hello HelloWorld  
- $ cd hello  
- $ cordova platform add android  
- $ cordova build  
- $ cordova emulate android  
+$ cordova create hello com.example.hello HelloWorld  
+$ cd hello  
+$ cordova platform add android  
+$ cordova build  
+$ cordova emulate android  
 
 ###　1.7サンプルアプリを実機で確認する  
-  アンドロイド実機の「端末情報」を選択  
-　　ビルド番号を７回連続でタップ  
-　　開発者オプションが表示される  
-　　USBデバッグにチェックを入れる  
-   端末のVIDとPIDを確認する  
-　　詳細はこちら：http://note.chiebukuro.yahoo.co.jp/detail/n128056  
-　　android_winusb.infを編集する  
-　　詳細はこちら：http://note.chiebukuro.yahoo.co.jp/detail/n128056  
-　　ドライバのインストール  
-   署名なしのドライバをインストールする方法詳細はこちら：http://www.teradas.net/archives/9922/  
+アンドロイド実機の「端末情報」を選択  
+ビルド番号を７回連続でタップ  
+開発者オプションが表示される  
+USBデバッグにチェックを入れる  
+端末のVIDとPIDを確認する  
+詳細はこちら：http://note.chiebukuro.yahoo.co.jp/detail/n128056  
+android_winusb.infを編集する  
+詳細はこちら：http://note.chiebukuro.yahoo.co.jp/detail/n128056  
+ドライバのインストール  
+署名なしのドライバをインストールする方法詳細はこちら：http://www.teradas.net/archives/9922/  
 
 
 ## 2: GoogleMapを利用するための準備をする
-  SHA-1を確認する  
-　　コマンドプロンプトを開く  
-　　Android SDK Platform-toolsとAndroid SDK Build-toolsフォルダにパスが通っていることを確認する  
-　　次のコマンドを実行する  
-　　keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android  
-　　SHA-1と表示されている部分をコピーする  
-
-　googleのアカウントを作成する  
-　下記URLにアクセスする  
-　https://code.google.com/apis/console/?noredirect#project:867507542052:access  
-　画面左のAPI　Access をクリック  
-　画面下のCreate New Android Key をクリック  
-　SHA-1を入力する  
-　":"を入力する  
-  任意のAPIキー(com.sample.myapp)を入力する  
+SHA-1を確認する  
+コマンドプロンプトを開く  
+Android SDK Platform-toolsとAndroid SDK Build-toolsフォルダにパスが通っていることを確認する  
+次のコマンドを実行する  
+keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android keypass android  
+SHA-1と表示されている部分をコピーする  
+googleのアカウントを作成する  
+下記URLにアクセスする  
+https://code.google.com/apis/console/?noredirect#project:867507542052:access  
+画面左のAPI　Access をクリック  
+画面下のCreate New Android Key をクリック  
+SHA-1を入力する  
+":"を入力する  
+任意のAPIキー(com.sample.myapp)を入力する  
 
 ## 3:戸塚アプリを作る
 ### 3.1: プロジェクトを作る
-　次のコマンドを実行する   
-　cordova create <App Name>  com.example.app “app”  
+次のコマンドを実行する   
+cordova create <App Name>  com.example.app “app”  
+
 ### 3.2: android対応にする  
- cd <App Name>  
- cordova platform add android  
+cd <App Name>  
+cordova platform add android  
 
 ### 3.3: googlemapプラグインをインストールする
- cordova plugin add plugin.google.maps --variable API_KEY_FOR_ANDROID="YOUR_ANDROID_API_KEY_IS_HERE"   
+cordova plugin add plugin.google.maps --variable API_KEY_FOR_ANDROID="YOUR_ANDROID_API_KEY_IS_HERE"   
 
 ### 3.4: ソースをダウンロードする
- git clone https://github.com/masa8/totsuka_meguri.git  
+git clone https://github.com/masa8/totsuka_meguri.git  
 
 ### 3.5: ソースをコピーする
-　index.htmlとspot.jsをwww以下にコピーする  
+index.htmlとspot.jsをwww以下にコピーする  
 
 ### 3.6: ビルド、実行する
- cordova build android  
- cordova run android  
+cordova build android  
+cordova run android  
 
 ## 4:戸塚アプリを修正する
 ### 4.1:コンテンツを修正する
-　spot.jsonを修正する  
-　　史跡を追加する  
-　　カテゴリ  
-　　タイトル  
-　　名前  
-　　位置  
-　　画像  
-　　説明  
-　　行き方  
+spot.jsonを修正する  
+史跡を追加する  
+カテゴリを追加する    
+タイトルを追加する  
+名前を追加する    
+位置を追加する  
+画像を追加する  
+説明を追加する  
+行き方を追加する  
 
 ### 4.2: ビルド、実行する
 次のコマンドを実行する  
