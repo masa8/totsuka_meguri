@@ -27,6 +27,7 @@ Tools以下の下記をインストール
 + Android SDK Build-tools 21.1.2  
 + Android SDK Build-tools 19.1  
 + Android SDK Build-tools 19   
+
 Android 5.1.1(API22)以下の下記をインストール  
 + Documentation for Android SDK 22  
 + SDK Platform 22  
@@ -40,12 +41,14 @@ Android 5.1.1(API22)以下の下記をインストール
 + Google APIs ARM EABI v7a System Image  
 + Google APIs Intel x86 Atom_64 System Image  
 + Google APIs Intel x86 Atom System Image  
+
 Android 5.0.1(API21)以下の下記をインストール  
 + SDK Platform 21  
 + ARM EABI v7a System Image 21  
 + Google APIs 21   
 + Google APIs Intel x86 Atom System Image 21  
 + Sources for Android SDK 21  
+
 Android 4.4.2(API19)以下の下記をインストール  
 + SDK Platform 19  
 + Samples for SDK 19  
@@ -54,6 +57,7 @@ Android 4.4.2(API19)以下の下記をインストール
 + Google APIs(x86 System Image) 19  
 + Google APIs (ARM System Image) 19  
 + Sources for Android SDK 19  
+
 Extra以下の下記をインストール  
 + Android Support Registory 12  
 + Android Support Library 12  
