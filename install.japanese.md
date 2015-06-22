@@ -2,7 +2,7 @@
 ### 1.1: Javaをインストールする
  http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html  
  JDKのバージョン７をインストールする  
-　OSが32ビットならjdk-7u79-windows-i586.exeをダウンロードし手順に従ってインストール  
+  OSが32ビットならjdk-7u79-windows-i586.exeをダウンロードし手順に従ってインストール  
   OSが64ビットならjdk-7u79-windows-x64.exeをダウンロードし手順に従ってインストール  
 
 ### 1.2: Antをインストールする
