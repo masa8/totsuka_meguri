@@ -6,11 +6,11 @@
   OSが64ビットならjdk-7u79-windows-x64.exeをダウンロードし手順に従ってインストール  
 
 ### 1.2: Antをインストールする
- http://ant.apache.org/bindownload.cgi  
-  apache-ant-1.9.5-bin.zipを任意のフォルダに解凍する  
-　　詳細はこちら：http://www.javadrive.jp/ant/install/index1.html  
-　ANT_HOMEとPATHを設定する  
-　　詳細はこちら：http://www.javadrive.jp/ant/install/index2.html  
+http://ant.apache.org/bindownload.cgi  
+apache-ant-1.9.5-bin.zipを任意のフォルダに解凍する  
+詳細はこちら：http://www.javadrive.jp/ant/install/index1.html  
+ANT_HOMEとPATHを設定する  
+詳細はこちら：http://www.javadrive.jp/ant/install/index2.html  
 
 
 ### 1.3: Androidをインストールする
