@@ -17,7 +17,7 @@ ANT_HOMEとPATHを設定する
 https://developer.android.com/sdk/index.html  
 DOWNLOAD ANDROID STUDIO FOR windowsをクリックし手順に従ってインストール  
 
-### 1.4 必要なライブラリをインストールする
+### 1.4: 必要なライブラリをインストールする
 Androidstudioを起動  
 Configureを選択  
 SDKマネージャを選択  
@@ -65,7 +65,7 @@ Extra以下の下記をインストール
 + Google USB Driver  
 + Intel x86 Emulator  Accelerator(HAXM installer)  
   
-### 1.5 git/gitBASHをインストールする
+### 1.5: git/gitBASHをインストールする
 https://msysgit.github.io  
 Welcomeページでネクストボタンをクリック  
 ライセンスを確認しネクストボタンをクリック  
@@ -89,7 +89,7 @@ $ cordova platform add android
 $ cordova build  
 $ cordova emulate android  
 
-###　1.9サンプルアプリを実機で確認する  
+### 1.9: サンプルアプリを実機で確認する  
 アンドロイド実機の「端末情報」を選択  
 ビルド番号を７回連続でタップ  
 開発者オプションが表示される  
@@ -103,7 +103,7 @@ android_winusb.infを編集する
 $ cordova run android  
 
 ## 2: GoogleMapを利用するための準備をする
-### 2.1 SHA-1を確認する
+### 2.1: SHA-1を確認する
 SHA-1を確認する  
 コマンドプロンプトを開く  
 Android SDK Platform-toolsとAndroid SDK Build-toolsフォルダにパスが通っていることを確認する  
@@ -111,7 +111,7 @@ Android SDK Platform-toolsとAndroid SDK Build-toolsフォルダにパスが通�
 keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android keypass android  
 SHA-1と表示されている部分をコピーする  
 
-### 2.2 キーを登録する
+### 2.2: キーを登録する
 googleのアカウントを作成する  
 下記URLにアクセスする  
 https://code.google.com/apis/console/?noredirect#project:867507542052:access  
