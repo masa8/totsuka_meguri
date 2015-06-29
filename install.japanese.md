@@ -83,6 +83,7 @@ Windows installerをクリックし手順に従ってインストール
 C:\>npm install -g cordova  
 
 ### 1.8: サンプルアプリで確認する  
+gitBASHを開いて次のコマンドを実行  
 $ cordova create hello com.example.hello HelloWorld  
 $ cd hello  
 $ cordova platform add android  
@@ -123,10 +124,13 @@ SHA-1を入力する
 
 ## 3:戸塚アプリを作る
 ### 3.1: プロジェクトを作る
+アプリ名を決める  
+<App Name>  （例えばHello)
 次のコマンドを実行する   
 cordova create <App Name>  com.example.app “app”  
 
-### 3.2: android対応にする  
+### 3.2: android対応にする
+次のコマンドを実行（App NamgeがHelloの場合はcd Hello)  
 cd <App Name>  
 cordova platform add android  
 
@@ -145,7 +149,7 @@ cordova run android
 
 ## 4:戸塚アプリを修正する
 ### 4.1:コンテンツを修正する
-spot.jsonを修正する  
+spot.jsonを任意に修正する  
 史跡を追加する  
 カテゴリを追加する    
 タイトルを追加する  
