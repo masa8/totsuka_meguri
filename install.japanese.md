@@ -108,6 +108,7 @@ $ cordova run android
 SHA-1を確認する  
 コマンドプロンプトを開く  
 Android SDK Platform-toolsとAndroid SDK Build-toolsフォルダにパスが通っていることを確認する  
+JAVAのbinフォルダ(WindowsならC:\Program Files\Java\jre7\binなど）にパスが通っている事を確認する
 次のコマンドを実行する  
 keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android keypass android  
 SHA-1と表示されている部分をコピーする  
